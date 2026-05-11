@@ -6,6 +6,19 @@ Local inference server for LLM, audio, and vision models on Apple Silicon.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+<table>
+  <tr>
+    <td><img src="static/LLM.png" alt="LLM chat" /></td>
+    <td><img src="static/Vision.png" alt="Vision inference" /></td>
+    <td><img src="static/Metrics.png" alt="Inference metrics" /></td>
+  </tr>
+  <tr>
+    <td align="center">LLM chat with sampler controls</td>
+    <td align="center">Vision · image &amp; video understanding</td>
+    <td align="center">Live inference metrics</td>
+  </tr>
+</table>
+
 ## Requirements
 
 - macOS on Apple Silicon (MLX requires Metal)
