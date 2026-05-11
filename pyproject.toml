@@ -1,0 +1,36 @@
+[project]
+name = "mlx-workbench"
+version = "0.1.0"
+description = "Apple Silicon inference server for LLM, audio, and vision models via MLX."
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    # Web
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.6",
+    "python-multipart>=0.0.12",
+    "sse-starlette>=2.1",
+    "httpx>=0.28",
+    # MLX
+    "mlx>=0.31",
+    "mlx-lm>=0.31",
+    "mlx-whisper>=0.4",
+    "mlx-vlm>=0.4",
+    # transformers 5.x's AutoImageProcessor requires torchvision at import time;
+    # without it, mlx-vlm misreports the failure as "Unrecognized image processor".
+    "torchvision>=0.20",
+    # Bundled ffmpeg binary — mlx-whisper shells out to ffmpeg for audio decoding.
+    "imageio-ffmpeg>=0.5",
+    # HuggingFace
+    "huggingface-hub>=0.26",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+]
+
+[tool.uv]
+package = false
